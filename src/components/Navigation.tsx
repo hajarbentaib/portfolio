@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { NAV, PROFILE } from "@/lib/data";
 import { useScroll, scrollToTarget } from "@/lib/scroll";
 import { useScrollProgress } from "@/lib/hooks";
+import { asset } from "@/lib/assetPath";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -154,7 +155,7 @@ export function Navigation() {
         {/* Right CTA / Mobile Menu Button */}
         <div className="flex items-center gap-2 pointer-events-auto">
           <a
-            href={PROFILE.resume}
+            href={asset(PROFILE.resume)}
             download
             className="hidden lg:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full border border-[var(--line)] bg-white/60 hover:bg-white hover:border-[var(--ink)] transition-all text-[var(--ink)]"
           >
@@ -225,7 +226,7 @@ export function Navigation() {
           <div className="flex items-center justify-between text-xs text-[var(--mute)] font-mono">
             <span>{PROFILE.location}</span>
             <a
-              href={PROFILE.resume}
+              href={asset(PROFILE.resume)}
               download
               className="font-sans font-semibold underline text-[var(--ink)]"
             >

@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { PROFILE } from "@/lib/data";
 import { scrollToTarget } from "@/lib/scroll";
+import { asset } from "@/lib/assetPath";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -139,14 +140,14 @@ export function Hero() {
             playsInline
             preload="auto"
             autoPlay
-            poster="/portrait-bust.webp"
+            poster={asset("/portrait-bust.webp")}
             className="w-full h-full object-cover object-top select-none pointer-events-none"
             style={{
               mixBlendMode: "multiply",
             }}
           >
-            <source src="/hero/hero.webm" type="video/webm" />
-            <source src="/hero/hero.mp4" type="video/mp4" />
+            <source src={asset("/hero/hero.webm")} type="video/webm" />
+            <source src={asset("/hero/hero.mp4")} type="video/mp4" />
           </video>
         </div>
 
@@ -230,7 +231,7 @@ export function Hero() {
           </a>
 
           <a
-            href={PROFILE.resume}
+            href={asset(PROFILE.resume)}
             download
             className="btn-pill-secondary"
           >

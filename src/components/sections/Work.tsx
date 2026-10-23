@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { PROJECTS, ProjectItem } from "@/lib/data";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { TechLogo } from "@/components/ui/TechLogo";
+import { asset } from "@/lib/assetPath";
 
 type ActiveTab = "overview" | "schema" | "video" | "code";
 
@@ -308,7 +309,7 @@ export function Work() {
                         preload="metadata"
                         className="w-full h-full object-contain"
                       >
-                        <source src={project.videoUrl} type="video/mp4" />
+                        <source src={asset(project.videoUrl)} type="video/mp4" />
                         Votre navigateur ne supporte pas la balise vidéo.
                       </video>
                     </div>
@@ -371,7 +372,7 @@ export function Work() {
 
                           {project.docUrl && (
                             <a
-                              href={project.docUrl}
+                              href={asset(project.docUrl)}
                               download
                               className="btn-pill-secondary text-xs"
                             >
@@ -413,7 +414,7 @@ export function Work() {
 
                     {project.docUrl && (
                       <a
-                        href={project.docUrl}
+                        href={asset(project.docUrl)}
                         download
                         className="btn-pill-secondary text-xs py-2 px-4"
                       >

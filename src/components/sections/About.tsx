@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PROFILE } from "@/lib/data";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { asset } from "@/lib/assetPath";
 
 export function About() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -92,7 +93,7 @@ export function About() {
             </div>
 
             <div className="flex flex-wrap gap-3 mt-8 pt-6 border-t border-[var(--line)]">
-              <a href={PROFILE.resume} download className="btn-pill-primary text-xs">
+              <a href={asset(PROFILE.resume)} download className="btn-pill-primary text-xs">
                 Télécharger le CV ↓
               </a>
               <a
@@ -175,7 +176,7 @@ export function About() {
                   <div className="flex flex-col items-center my-auto">
                     <div className="w-[128px] h-[156px] rounded-xl p-[3px] bg-gradient-to-b from-[#e0e0e0] to-[#b0b0b0] shadow-inner overflow-hidden group">
                       <img
-                        src="/portrait-bust.webp"
+                        src={asset("/portrait-bust.webp")}
                         alt={PROFILE.name}
                         width={128}
                         height={156}
